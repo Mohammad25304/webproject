@@ -17,6 +17,8 @@ use App\Http\Controllers\LeagueController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\MatchController;
+use App\Http\Controllers\AuthController;
+
 
 // Leagues
 Route::get('/leagues', [LeagueController::class, 'index']); // Get all leagues
@@ -53,3 +55,17 @@ Route::get('/leagues/{leagueId}/matches/fetch', [MatchController::class, 'fetchM
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+
+
+//login signup
+route::post('/login',[AuthController::class, 'login']);
+route::post('/register',[AuthController::class, 'register']);
+
+
+
+
+
+
+
